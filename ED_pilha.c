@@ -265,8 +265,9 @@ void avaliacao(){
 int main(){
 	char expre[50];
 	int v;
-	t_pilha * pilha=criarPilha();
+	//t_pilha * pilha=criarPilha();
 	do{
+        t_pilha * pilha=criarPilha();
 		printf("======================================\n");
 		printf("=======     CALCULADORA       ========\n");
 		printf("======================================\n");
@@ -281,6 +282,8 @@ int main(){
 		}else{
 			printf("Expressa inválida\n");
 			printf("Digite novamente!!!\n");
+            for(int i=0;i<50;i++)expre[i]='\0';
+            free(pilha);
 		}
 	}while(v!=1);
 	return 0;
